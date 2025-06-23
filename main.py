@@ -1,5 +1,6 @@
 from utils.logger import SingletonLogger
-from app.distribution import CaseDistributor
+from app.get_case_list import CaseDistributor
+
 
 def main():
     SingletonLogger.configure()
