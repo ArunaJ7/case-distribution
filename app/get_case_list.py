@@ -21,8 +21,11 @@
 #     return result
 
 
-from utils.mongo_connection import get_mongo_db
 from utils.logger import SingletonLogger
+from utils.mongo_connection import MongoConnection
+
+db = MongoConnection().get_database()
+
 
 
 class CaseDistributor:
@@ -34,7 +37,8 @@ class CaseDistributor:
 
 
     def extract_case_id_and_billing_centre(case_ids):
-        db = get_mongo_db()
+        db = MongoConnection().get_database()
+
         collection = db["Case_Details"]  #db name 
 
         result = []
